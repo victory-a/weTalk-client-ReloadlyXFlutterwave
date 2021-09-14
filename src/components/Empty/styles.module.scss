@@ -1,0 +1,15 @@
+@import "../../sass/main.scss";
+
+.container {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    margin-top: 2rem;
+  }
+  svg {
+    width: initial;
+    height: initial;
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../sass/main.scss";
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+  svg {
+    animation: rotate 0.9s linear infinite;
+    color: $primary;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.container_inline {
+  display: inline-block;
+
+  svg {
+    animation: rotate 0.9s linear infinite;
+    color: $primary;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
