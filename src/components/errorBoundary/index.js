@@ -4,10 +4,10 @@ import { refresh, container, message } from "./styles.module.scss";
 export const ErrorBoundaryFallback = () => (
   <div className={container}>
     <div className={message}>
-      Hey, something went wrong!
-      <span onClick={() => window.location.reload()} className={refresh}>
+      Hey, something went wrong.{" "}
+      <button onClick={() => window.location.reload()} className={refresh}>
         Please refresh!
-      </span>
+      </button>
       <span role="img" aria-label="face-emoji">
         {" "}
         😞

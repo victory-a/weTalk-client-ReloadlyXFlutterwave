@@ -1,0 +1,56 @@
+@import "../../sass/main.scss";
+
+.container {
+  border: none;
+
+  label {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+
+    & .required {
+      color: red !important;
+    }
+  }
+
+  select {
+    width: 100%;
+    height: 44px;
+    border-radius: 4px;
+    // font-family: $default-font-family;
+    font-size: 14px;
+    line-height: 1.5;
+    text-indent: 1.6rem;
+    // border: 1px solid $indigo;
+    // transition: border-color ease 0.3s;
+    margin-top: 8px;
+    margin-bottom: 2.4rem;
+    // color: $primary;
+
+    // hide default dropdown icon
+    // appearance: none;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      opacity: 0.8; /* Firefox */
+      font-size: 13px;
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      opacity: 0.8; /* Firefox */
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      font-size: 13px;
+    }
+
+    &:focus {
+      outline: none;
+      // border-color: $indigo;
+    }
+  }
+}
