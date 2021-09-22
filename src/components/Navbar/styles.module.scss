@@ -1,0 +1,31 @@
+@import "../../sass/main.scss";
+
+nav {
+  width: 93%;
+  margin: 0 auto;
+  padding-top: 2.4rem;
+
+  color: $primary;
+  @include flexspacebtw;
+
+  ul {
+    display: flex;
+    li {
+      font-weight: normal;
+      white-space: nowrap;
+
+      &:not(:last-of-type) {
+        margin-right: 2.8rem;
+      }
+    }
+  }
+
+  a {
+    color: $primary;
+
+    &:hover {
+      color: $primary;
+      text-decoration: underline;
+    }
+  }
+}

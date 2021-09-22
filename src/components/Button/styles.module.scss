@@ -1,0 +1,30 @@
+@import "../../sass/main.scss";
+
+.button {
+  height: 48px;
+  width: 100%;
+  background: $secondary;
+  border: 1px solid $secondary;
+  box-sizing: border-box;
+  border-radius: 9px;
+  cursor: pointer;
+  color: $white;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 21px;
+  transition: transform 0.3s ease;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-4px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+}
