@@ -1,23 +1,26 @@
 import React from "react";
 
-import Button from "components/Button";
+import Welcome from "./steps/Welcome";
+import Country from "./steps/Country";
+import Email from "./steps/Email";
+import Amount from "./steps/Amount";
+
 import NavBar from "components/Navbar";
 
 import styles from "./styles.module.scss";
+import Mobile from "./steps/Mobile";
+import { useProvider } from "Context/Provider";
+
+const steps = [<Welcome />, <Country />, <Email />, <Amount />, <Mobile />];
 
 const Home = () => {
+  const { page } = useProvider();
+
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${page !== 0 ? styles.noBg : ""}`}>
       <NavBar />
 
-      <div className={styles.headerContainer}>
-        <h1>Top-up mobile airtime from anywhere around the world in any currency</h1>
-        <p>You can still top-up your mobile wallet airtime even without your local currency.</p>
-
-        <div className={styles.buttonContainer}>
-          <Button>Get Started</Button>
-        </div>
-      </div>
+      {steps[page]}
     </div>
   );
 };

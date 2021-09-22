@@ -1,5 +1,5 @@
 import React from "react";
-// import NumberFormat from "react-number-format";
+import NumberFormat from "react-number-format";
 import styles from "./styles.module.scss";
 
 const TextInput = props => {
@@ -17,18 +17,34 @@ const TextInput = props => {
 
 export default TextInput;
 
-// export const PhoneNumberInput = props => {
-//   const [field] = useField(props);
+export const PhoneNumberInput = props => {
+  return (
+    <NumberFormat
+      title="Provide a valid phone number"
+      customInput={TextInput}
+      // format="#### ### ####"
+      autoComplete="tel"
+      type="tel"
+      {...props}
+    />
+  );
+};
 
-//   return (
-//     <NumberFormat
-//       title="Provide a valid phone number"
-//       customInput={TextInput}
-//       format="#### ### ####"
-//       autoComplete="tel"
-//       type="tel"
-//       {...field}
-//       {...props}
-//     />
-//   );
-// };
+export const AmountInput = props => {
+  const { disabled = false } = props;
+
+  return (
+    <fieldset className={styles.container}>
+      <NumberFormat
+        decimalScale={2}
+        disabled={disabled}
+        allowNegative={false}
+        thousandSeparator={true}
+        customInput={TextInput}
+        // empty string on prefix prop is iintentional to fix bug from package
+        prefix=" "
+        {...props}
+      />
+    </fieldset>
+  );
+};

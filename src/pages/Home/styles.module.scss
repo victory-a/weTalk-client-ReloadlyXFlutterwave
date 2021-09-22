@@ -5,6 +5,10 @@
   width: 100%;
   background: url("../../assets/map.png") no-repeat;
   background-size: cover;
+
+  &.noBg {
+    background: $white;
+  }
 }
 
 .headerContainer {
@@ -37,7 +41,19 @@
 
   @include sm {
     margin: unset;
-  margin-top: 3rem;
+    margin-top: 3rem;
+  }
+}
 
+.stepsContainer {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 10%;
+  padding: 2rem;
+
+  form {
+    // border: 1px solid red;
+    max-width: 500px;
   }
 }

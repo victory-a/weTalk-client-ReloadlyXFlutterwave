@@ -4,8 +4,8 @@
   border: none;
 
   label {
-    font-weight: 400;
-    font-size: 15px;
+    font-weight: 600;
+    font-size: 2rem;
     line-height: 1.5;
 
     & .required {
@@ -26,6 +26,7 @@
     margin-top: 8px;
     margin-bottom: 2.4rem;
     color: $primary;
+    background-color: $white;
 
     -webkit-appearance: none;
     -moz-appearance: none;
