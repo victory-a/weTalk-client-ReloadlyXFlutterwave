@@ -20,7 +20,11 @@ const AppProvider = props => {
   }
 
   function goGorward() {
-    return setPage(currentPage => currentPage + 1);
+    return setPage(currentPage => {
+      if (currentPage > 5) return;
+
+      return currentPage + 1;
+    });
   }
 
   const [state, dispatch] = React.useReducer(reducer, initialState);

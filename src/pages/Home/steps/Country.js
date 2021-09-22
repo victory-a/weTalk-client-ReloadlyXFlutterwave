@@ -5,11 +5,12 @@ import { useProvider } from "Context/Provider";
 import Button from "components/Button";
 import SelectInput from "components/Select";
 
+import flag from "assets/NG.png";
 import styles from "../styles.module.scss";
 
 const countries = [
-  { label: "Nigeria", value: "NGN" },
-  { label: "Egypt", value: "EGY" }
+  { label: "Nigeria", value: "NGN", flag: flag },
+  { label: "Egypt", value: "EGY", flag: flag }
 ];
 const Country = () => {
   const { goGorward } = useProvider();

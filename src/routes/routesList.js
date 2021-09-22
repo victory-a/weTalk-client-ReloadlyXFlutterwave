@@ -2,7 +2,7 @@ import React, { lazy } from "react";
 import { Redirect } from "react-router-dom";
 
 const Home = lazy(() => import("pages/Home"));
-const About = lazy(() => import("pages/About"));
+// const About = lazy(() => import("pages/About"));
 
 const routes = [
   {
@@ -10,11 +10,11 @@ const routes = [
     exact: true,
     component: Home
   },
-  {
-    path: "/about",
-    exact: true,
-    component: About
-  },
+  // {
+  //   path: "/about",
+  //   exact: true,
+  //   component: About
+  // },
   {
     path: "*",
     exact: true,

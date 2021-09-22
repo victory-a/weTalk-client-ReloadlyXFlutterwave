@@ -19,6 +19,11 @@ const SelectInput = props => {
               return (
                 <option value={_.value} key={`option-${i}`}>
                   {_.label}
+                  {/* {
+                    <div className={styles.value}>
+                      <img src={_.flag} alt="flag" />
+                    </div>
+                  } */}
                 </option>
               );
             })
