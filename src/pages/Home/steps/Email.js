@@ -8,7 +8,7 @@ import Button from "components/Button";
 import styles from "../styles.module.scss";
 
 const Email = () => {
-  const { goGorward } = useProvider();
+  const { goGorward, goBack } = useProvider();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,7 +25,13 @@ const Email = () => {
           type="email"
           required
         />
-        <Button>Contunue</Button>
+
+        <div className={styles.buttonContainer}>
+          <Button onClick={goBack} outline type="button">
+            Back
+          </Button>
+          <Button>Continue</Button>
+        </div>
       </form>
     </div>
   );

@@ -43,6 +43,20 @@
     margin: unset;
     margin-top: 3rem;
   }
+
+  display: flex;
+
+  @include sm {
+    flex-direction: column-reverse;
+  }
+
+  & > button {
+    margin-bottom: 2.5rem;
+
+    &:not(:last-of-type) {
+      margin-right: 2.5rem;
+    }
+  }
 }
 
 .stepsContainer {
@@ -53,7 +67,6 @@
   padding: 2rem;
 
   form {
-    // border: 1px solid red;
     max-width: 500px;
   }
 }

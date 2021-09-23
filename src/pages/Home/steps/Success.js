@@ -12,7 +12,10 @@ const Success = () => {
     <div className={styles.success}>
       <img src={success} alt="successful pament" />
       <p>Payment Successful</p>
-      <Button onClick={() => setPage(0)}>Home</Button>
+
+      <div className={styles.buttonContainer}>
+        <Button onClick={() => setPage(0)}>Back to Home</Button>
+      </div>
     </div>
   );
 };

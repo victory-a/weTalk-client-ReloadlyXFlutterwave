@@ -8,12 +8,14 @@ import Button from "components/Button";
 
 import styles from "../styles.module.scss";
 
-const Mobile = () => {
-  const { goGorward } = useProvider();
+const Mobile = ({ pay }) => {
+  // eslint-disable-next-line no-unused-vars
+  const { goGorward, goBack } = useProvider();
 
   function handleSubmit(e) {
     e.preventDefault();
-    goGorward();
+    pay();
+    // goGorward();
   }
 
   return (
@@ -25,10 +27,17 @@ const Mobile = () => {
           placeholder="08012345678"
           required
         />
-        <Button>
-          <AiFillLock />
-          Pay $7.49
-        </Button>
+
+        <div className={styles.buttonContainer}>
+          <Button onClick={goBack} outline type="button">
+            Back
+          </Button>
+
+          <Button>
+            <AiFillLock />
+            Pay $7.49
+          </Button>
+        </div>
       </form>
     </div>
   );

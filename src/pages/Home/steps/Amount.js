@@ -7,7 +7,7 @@ import Button from "components/Button";
 import styles from "../styles.module.scss";
 
 const Amount = () => {
-  const { goGorward } = useProvider();
+  const { goGorward, goBack } = useProvider();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,7 +18,13 @@ const Amount = () => {
     <div className={styles.stepsContainer}>
       <form onSubmit={handleSubmit}>
         <AmountInput label="Enter amount to top-up" name="amount" placeholder="5,000" required />
-        <Button>Contunue</Button>
+
+        <div className={styles.buttonContainer}>
+          <Button onClick={goBack} outline type="button">
+            Back
+          </Button>
+          <Button>Continue</Button>
+        </div>
       </form>
     </div>
   );

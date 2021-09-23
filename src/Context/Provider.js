@@ -1,13 +1,21 @@
 import React from "react";
 import reducer from "./reducer";
 
-const initialState = {};
+const initialState = {
+  country: {},
+  email: "",
+  amount: null,
+  mobile: ""
+};
+
 const Context = React.createContext();
 Context.displayName = "App Context";
 
 const AppProvider = props => {
   const { Provider } = Context;
   const [page, setPage] = React.useState(0);
+
+  const [formValues, setFormValues] = React.useState(initialState);
 
   function goBack() {
     return setPage(currentpage => {
@@ -29,7 +37,7 @@ const AppProvider = props => {
 
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
-  const values = { page, setPage, state, dispatch, goBack, goGorward };
+  const values = { page, setPage, state, dispatch, goBack, goGorward, formValues, setFormValues };
   return <Provider value={values} {...props} />;
 };
 
