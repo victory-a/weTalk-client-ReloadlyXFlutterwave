@@ -3,7 +3,11 @@ import styles from "./styles.module.scss";
 
 const Button = props => {
   return (
-    <button type="submit" {...props} className={styles.button}>
+    <button
+      type="submit"
+      {...props}
+      className={`${styles.button} ${props.outline ? styles.outline : ""}`}
+    >
       {props.children}
     </button>
   );

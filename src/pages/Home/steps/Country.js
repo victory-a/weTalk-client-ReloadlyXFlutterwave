@@ -13,7 +13,7 @@ const countries = [
   { label: "Egypt", value: "EGY", flag: flag }
 ];
 const Country = () => {
-  const { goGorward } = useProvider();
+  const { goGorward, goBack } = useProvider();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -29,7 +29,13 @@ const Country = () => {
           options={countries}
           required
         />
-        <Button>Contunue</Button>
+
+        <div className={styles.buttonContainer}>
+          <Button onClick={goBack} outline type="button">
+            Back
+          </Button>
+          <Button onClick={goGorward}>Continue</Button>
+        </div>
       </form>
     </div>
   );

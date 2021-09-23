@@ -33,4 +33,10 @@
   svg {
     margin-right: 6px;
   }
+
+  &.outline {
+    color: $secondary;
+    background: $white;
+    border-color: $secondary;
+  }
 }
