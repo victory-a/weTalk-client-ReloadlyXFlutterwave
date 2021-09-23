@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
 import axios from "axios";
-import config from "config";
 
 let client = axios.create({
-  baseURL: config.BASE_URL,
+  baseURL: process.env.REACT_APP_BASE_URL,
   headers: {
     "Content-Type": "application/json"
   }
@@ -15,7 +14,7 @@ client.interceptors.response.use(
     return response.data;
   },
   function(error) {
-    return Promise.reject(error.response.data);
+    return Promise.reject(error.response);
   }
 );
 

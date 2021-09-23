@@ -23,7 +23,7 @@ const Amount = () => {
           <Button onClick={goBack} outline type="button">
             Back
           </Button>
-          <Button onClick={goGorward}>Continue</Button>
+          <Button>Continue</Button>
         </div>
       </form>
     </div>
