@@ -1,0 +1,11 @@
+// style overrides for react select
+.css-yk16xz-control,
+.css-1pahdxg-control {
+  height: 44px;
+}
+
+.css-1pahdxg-control {
+  box-shadow: none;
+  transition: border-color ease 0.3s;
+  box-shadow: 0 0 0 1px transparent !important;
+}

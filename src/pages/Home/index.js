@@ -13,7 +13,7 @@ import Mobile from "./steps/Mobile";
 import { useProvider } from "Context/Provider";
 
 const payload = {
-  public_key: "FLWPUBK_TEST-71e737bf406d6173caa00df4246fe29a-X",
+  public_key: process.env.REACT_APP_PUBLIC_KEY,
   tx_ref: "RX1",
   amount: 10,
   currency: "USD",

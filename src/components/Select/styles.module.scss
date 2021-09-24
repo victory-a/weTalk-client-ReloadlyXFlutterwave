@@ -7,65 +7,22 @@
     font-weight: 600;
     font-size: 2rem;
     line-height: 1.5;
+    margin-bottom: 16px;
 
     & .required {
       color: red !important;
     }
   }
 
-  select {
-    width: 100%;
-    height: 44px;
-    border-radius: 4px;
-    font-family: $default-font-family;
-    font-size: 14px;
-    line-height: 1.5;
-    text-indent: 1.6rem;
-    border: 1px solid $indigo;
-    transition: border-color ease 0.3s;
+  .selectContainer {
     margin-top: 8px;
-    margin-bottom: 2.4rem;
-    color: $primary;
 
-    // hide default dropdown icon
-    -webkit-appearance: none;
-    background: $white
-      url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+)
-      no-repeat 99% 50%;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-
-    &::placeholder {
-      /* Chrome, Firefox, Opera, Safari 10.1+ */
-      opacity: 0.8; /* Firefox */
-      font-size: 13px;
-    }
-
-    &:-ms-input-placeholder {
-      /* Internet Explorer 10-11 */
-      opacity: 0.8; /* Firefox */
-      font-size: 13px;
-    }
-
-    &::-ms-input-placeholder {
-      /* Microsoft Edge */
-      opacity: 0.8; /* Firefox */
-      font-size: 13px;
-    }
-
-    &:focus {
-      outline: none;
-      border-color: $primary;
-    }
-
-    p.error {
-      font-size: 12px;
-      color: red;
-    }
-
-    .value {
-      border: 1px solid red;
+    .reactSelectContainer {
+      font-family: $default-font-family;
+      font-size: 14px;
+      line-height: 1.5;
+      color: $primary;
+      transition: border-color ease 0.3s;
     }
   }
 }

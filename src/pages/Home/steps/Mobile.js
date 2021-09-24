@@ -10,7 +10,7 @@ import styles from "../styles.module.scss";
 
 const Mobile = ({ pay }) => {
   // eslint-disable-next-line no-unused-vars
-  const { goGorward, goBack } = useProvider();
+  const { goGorward, goBack, state } = useProvider();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,11 +25,13 @@ const Mobile = ({ pay }) => {
           label="Enter phone number"
           name="amount"
           placeholder="08012345678"
+          defaultPrefix={state.callingCode}
+          options={state.country.callingCodes}
           required
         />
 
         <div className={styles.buttonContainer}>
-          <Button onClick={goBack} outline type="button">
+          <Button onClick={goBack} outline={true} type="button">
             Back
           </Button>
 
