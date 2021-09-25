@@ -29,6 +29,7 @@ const Email = () => {
           type="email"
           onChange={handleChange}
           value={state.email}
+          autoFocus={true}
           required
         />
 

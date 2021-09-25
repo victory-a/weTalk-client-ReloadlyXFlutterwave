@@ -36,6 +36,7 @@ const Country = () => {
       .catch(() => {
         setIsLoading(false);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const countries = React.useMemo(() => formatCountryData(countriesData), [countriesData]);
@@ -60,6 +61,7 @@ const Country = () => {
           isLoading={isLoading}
           value={state.country}
           onChange={handleSelect}
+          autoFocus={true}
           required
         />
 

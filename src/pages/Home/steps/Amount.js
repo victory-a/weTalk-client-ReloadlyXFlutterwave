@@ -28,6 +28,7 @@ const Amount = () => {
           value={state.amount}
           onChange={handleChange}
           min={10}
+          autoFocus={true}
           required
         />
 

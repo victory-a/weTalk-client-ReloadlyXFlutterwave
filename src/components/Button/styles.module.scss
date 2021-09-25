@@ -14,6 +14,10 @@
   line-height: 21px;
   transition: transform 0.3s ease;
 
+  @include sm {
+    height: 38px;
+  }
+
   &:hover,
   &:focus {
     transform: translateY(-4px);

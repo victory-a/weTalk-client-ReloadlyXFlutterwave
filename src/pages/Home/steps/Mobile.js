@@ -100,6 +100,7 @@ const Mobile = ({ pay }) => {
           defaultPrefix={state.callingCode}
           options={state.country.callingCodes}
           onChange={handleChange}
+          autoFocus={true}
           required
         />
 
