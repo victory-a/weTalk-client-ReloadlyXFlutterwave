@@ -7,7 +7,7 @@
   background-size: cover;
 
   &.noBg {
-    background: $white;
+    // background: $white;
   }
 }
 
@@ -40,8 +40,23 @@
   margin-top: 8rem;
 
   @include sm {
-    margin: unset;
+    margin: 0;
     margin-top: 3rem;
+    width: 100%;
+  }
+
+  display: flex;
+
+  @include sm {
+    flex-direction: column-reverse;
+  }
+
+  & > button {
+    margin-bottom: 2.5rem;
+
+    &:not(:last-of-type) {
+      margin-right: 2.5rem;
+    }
   }
 }
 
@@ -52,9 +67,10 @@
   margin-top: 10%;
   padding: 2rem;
 
+
   form {
-    // border: 1px solid red;
     max-width: 500px;
+    margin: 0 auto;
   }
 }
 

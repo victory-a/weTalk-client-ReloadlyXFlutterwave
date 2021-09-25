@@ -1,15 +1,26 @@
 import React from "react";
 import reducer from "./reducer";
 
-const initialState = {};
+const initialState = {
+  country: {},
+  email: "",
+  amount: 10,
+  mobile: "",
+  callingCode: ""
+};
+
 const Context = React.createContext();
 Context.displayName = "App Context";
 
 const AppProvider = props => {
   const { Provider } = Context;
   const [page, setPage] = React.useState(0);
+  const [state, dispatch] = React.useReducer(reducer, initialState);
+  const [isLoading, setIsLoading] = React.useState(false);
 
-  function goBack() {
+  const goBack = React.useCallback(() => {
+    setIsLoading(false);
+
     return setPage(currentpage => {
       if (currentpage > 0) {
         return currentpage - 1;
@@ -17,20 +28,38 @@ const AppProvider = props => {
         return currentpage;
       }
     });
-  }
+  }, []);
 
-  function goGorward() {
+  const goGorward = React.useCallback(() => {
+    setIsLoading(false);
     return setPage(currentPage => {
       if (currentPage > 5) return;
 
       return currentPage + 1;
     });
-  }
+  }, []);
 
-  const [state, dispatch] = React.useReducer(reducer, initialState);
+  const setFormValue = React.useCallback((name, value) => {
+    dispatch({
+      type: "SET_FORM_VALUE",
+      payload: {
+        name,
+        value
+      }
+    });
+  }, []);
 
-  const values = { page, setPage, state, dispatch, goBack, goGorward };
-  return <Provider value={values} {...props} />;
+  const providerValues = {
+    page,
+    setPage,
+    goBack,
+    goGorward,
+    state,
+    setFormValue,
+    isLoading,
+    setIsLoading
+  };
+  return <Provider value={providerValues} {...props} />;
 };
 
 export default AppProvider;
