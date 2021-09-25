@@ -12,6 +12,8 @@ import Button from "components/Button";
 import styles from "../styles.module.scss";
 import { getOperator, verifyPaymentAndTopup } from "utils/requests";
 import { removeEmptySpace, removeCommas } from "utils/textFormatters";
+import closePaymentModal from "utils/wave";
+import { types } from "Context/reducer";
 
 const flutterWavePayload = {
   public_key: process.env.REACT_APP_PUBLIC_KEY,
@@ -29,7 +31,15 @@ const flutterWavePayload = {
 
 const Mobile = ({ pay }) => {
   // eslint-disable-next-line no-unused-vars
-  const { goGorward, goBack, state, setFormValue, isLoading, setIsLoading } = useProvider();
+  const {
+    goGorward,
+    goBack,
+    state,
+    setFormValue,
+    isLoading,
+    setIsLoading,
+    dispatch
+  } = useProvider();
 
   function handleChange(e) {
     setFormValue(e.target.name, e.target.value);
@@ -61,8 +71,17 @@ const Mobile = ({ pay }) => {
       // verify payment and charge card
       if (data?.status === "successful") {
         verifyPaymentAndTopup({ ...topUpPayload, transactionRef: data?.transaction_id })
-          .then(() => {
+          .then(({ response = {} }) => {
+            dispatch({
+              type: types.SET_TRANSACTION_DETAILS,
+              payload: {
+                amount: response?.deliveredAmount,
+                currency: response?.deliveredAmountCurrencyCode,
+                recipientPhone: response?.recipientPhone
+              }
+            });
             setIsLoading(false);
+            closePaymentModal();
             goGorward();
           })
 

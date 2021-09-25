@@ -67,7 +67,6 @@
   margin-top: 10%;
   padding: 2rem;
 
-
   form {
     max-width: 500px;
     margin: 0 auto;
@@ -103,5 +102,14 @@
       opacity: 0.8;
       margin: 4rem 0 2rem 0;
     }
+  }
+}
+
+.transactionDetails {
+  margin-top: 3rem;
+
+  p {
+    font-weight: normal;
+    font-size: 14px;
   }
 }

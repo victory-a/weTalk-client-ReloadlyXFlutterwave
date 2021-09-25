@@ -1,12 +1,13 @@
 import React from "react";
-import reducer from "./reducer";
+import reducer, { types } from "./reducer";
 
 const initialState = {
   country: {},
   email: "",
   amount: 10,
   mobile: "",
-  callingCode: ""
+  callingCode: "",
+  transactionDetails: {}
 };
 
 const Context = React.createContext();
@@ -41,7 +42,7 @@ const AppProvider = props => {
 
   const setFormValue = React.useCallback((name, value) => {
     dispatch({
-      type: "SET_FORM_VALUE",
+      type: types.SET_FORM_VALUE,
       payload: {
         name,
         value
@@ -57,7 +58,8 @@ const AppProvider = props => {
     state,
     setFormValue,
     isLoading,
-    setIsLoading
+    setIsLoading,
+    dispatch
   };
   return <Provider value={providerValues} {...props} />;
 };
