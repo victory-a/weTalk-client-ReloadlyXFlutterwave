@@ -47,11 +47,8 @@ const Mobile = ({ pay }) => {
 
     const topUpPayload = {
       amount: Number(removeCommas(state?.amount)),
-      // senderCountryCode: state?.country?.isoName,
-      // senderNumber: "08102944117",
       recipientNumber: operatorPayload.phoneNumber,
-      recipientCountryCode: state?.country?.isoName,
-      customIdentifier: flutterWavePayload.tx_ref
+      recipientCountryCode: state?.country?.isoName
     };
 
     flutterWavePayload.amount = Number(removeCommas(state?.amount));
@@ -63,7 +60,7 @@ const Mobile = ({ pay }) => {
     flutterWavePayload.callback = function(data) {
       // verify payment and charge card
       if (data?.status === "successful") {
-        verifyPaymentAndTopup(topUpPayload)
+        verifyPaymentAndTopup({ ...topUpPayload, transactionRef: data?.transaction_id })
           .then(() => {
             setIsLoading(false);
             goGorward();
@@ -86,7 +83,7 @@ const Mobile = ({ pay }) => {
       .catch(() => {
         setIsLoading(false);
 
-        cogoToast.error("Failed to verify mobile number, try again", { hideAfter: 7 });
+        cogoToast.error("Failed to verify mobile number, try again", { hideAfter: 20 });
       });
   }
 
