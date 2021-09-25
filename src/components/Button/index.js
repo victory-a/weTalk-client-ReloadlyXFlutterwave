@@ -1,14 +1,17 @@
 import React from "react";
 import styles from "./styles.module.scss";
+import { CgSpinner } from "react-icons/cg";
 
-const Button = ({ outline = false, ...props }) => {
+const Button = ({ outline = false, isLoading, ...props }) => {
   return (
     <button
       type="submit"
       {...props}
-      className={`${styles.button} ${outline ? styles.outline : ""}`}
+      className={`${styles.button} ${outline ? styles.outline : ""} ${
+        isLoading ? styles.loading : ""
+      }`}
     >
-      {props.children}
+      {!isLoading ? props.children : <CgSpinner fontSize={20} />}
     </button>
   );
 };

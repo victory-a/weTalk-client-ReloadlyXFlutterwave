@@ -18,7 +18,7 @@ const TextInput = props => {
 
 export default TextInput;
 
-export const PhoneNumberInput = props => {
+export const PhoneNumberInput = ({ defaultPrefix, ...props }) => {
   const { name, label = "", options = [], required = true } = props;
 
   return (
@@ -46,8 +46,6 @@ export const PhoneNumberInput = props => {
 
         <NumberFormat
           title="Provide a valid phone number"
-          // customInput={TextInput}
-          // format="#### ### ####"
           autoComplete="tel"
           type="tel"
           {...props}
@@ -69,7 +67,7 @@ export const AmountInput = props => {
         thousandSeparator={true}
         customInput={TextInput}
         // empty string on prefix prop is iintentional to fix bug from package
-        prefix=" "
+        prefix=""
         {...props}
       />
     </fieldset>

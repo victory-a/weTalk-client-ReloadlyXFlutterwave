@@ -8,6 +8,6 @@ export function getOperator(payload) {
   return client.post("/operator", payload);
 }
 
-export function verifyPayment(payload) {
+export function verifyPaymentAndTopup(payload) {
   return client.post("/verify", payload);
 }

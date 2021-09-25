@@ -15,7 +15,7 @@ const Amount = () => {
   }
 
   function handleChange(e) {
-    setFormValue("amount", e.target.value);
+    setFormValue(e.target.name, e.target.value);
   }
 
   return (

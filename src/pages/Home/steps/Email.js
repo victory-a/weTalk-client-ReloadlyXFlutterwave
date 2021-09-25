@@ -16,7 +16,7 @@ const Email = () => {
   }
 
   function handleChange(e) {
-    setFormValue("email", e.target.value);
+    setFormValue(e.target.name, e.target.value);
   }
 
   return (

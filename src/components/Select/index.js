@@ -24,6 +24,7 @@ export const SelectInput = props => {
         <Select
           {...{ name, options, isMulti, isSearchable, isLoading }}
           {...props}
+          loadingMessage={() => "Fetching countries"}
           className={styles.reactSelectContainer}
           classNamePrefix={styles.reactSelect}
         />

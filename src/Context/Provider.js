@@ -16,8 +16,11 @@ const AppProvider = props => {
   const { Provider } = Context;
   const [page, setPage] = React.useState(0);
   const [state, dispatch] = React.useReducer(reducer, initialState);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const goBack = React.useCallback(() => {
+    setIsLoading(false);
+
     return setPage(currentpage => {
       if (currentpage > 0) {
         return currentpage - 1;
@@ -28,6 +31,7 @@ const AppProvider = props => {
   }, []);
 
   const goGorward = React.useCallback(() => {
+    setIsLoading(false);
     return setPage(currentPage => {
       if (currentPage > 5) return;
 
@@ -51,7 +55,9 @@ const AppProvider = props => {
     goBack,
     goGorward,
     state,
-    setFormValue
+    setFormValue,
+    isLoading,
+    setIsLoading
   };
   return <Provider value={providerValues} {...props} />;
 };

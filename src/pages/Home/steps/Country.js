@@ -21,9 +21,7 @@ function formatCountryData(countries) {
 }
 
 const Country = () => {
-  const { goGorward, goBack, state, setFormValue } = useProvider();
-
-  const [isLoading, setIsLoading] = React.useState(false);
+  const { goGorward, goBack, state, setFormValue, isLoading, setIsLoading } = useProvider();
 
   const [countriesData, setCountriesData] = React.useState([]);
 

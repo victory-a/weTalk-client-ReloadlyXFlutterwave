@@ -40,8 +40,9 @@
   margin-top: 8rem;
 
   @include sm {
-    margin: unset;
+    margin: 0;
     margin-top: 3rem;
+    width: 100%;
   }
 
   display: flex;
