@@ -65,6 +65,7 @@
     border: 1px solid $indigo;
     transition: border-color ease 0.3s;
     border-radius: 4px;
+    margin-top: 8px;
 
     &:focus-within {
       border-color: $primary;
