@@ -1,34 +1,34 @@
 /* eslint-disable indent */
 import React from "react";
 import styles from "./styles.module.scss";
+import Select from "react-select";
 
-const SelectInput = props => {
-  const { name, label = "", options = [], required = true } = props;
+export const SelectInput = props => {
+  const {
+    name,
+    label,
+    options = [],
+    isSearchable = true,
+    isMulti = false,
+    required = true,
+    isLoading = true
+  } = props;
 
   return (
     <fieldset className={styles.container}>
       <label htmlFor={name}>
         {label} {required ? <span className={styles.required}>*</span> : null}
       </label>
-      <select id={name} {...props}>
-        <option value="" disabled className={styles.placeholder}>
-          {props.placeholder}
-        </option>
-        {options.length > 0
-          ? options.map((_, i) => {
-              return (
-                <option value={_.value} key={`option-${i}`}>
-                  {_.label}
-                  {/* {
-                    <div className={styles.value}>
-                      <img src={_.flag} alt="flag" />
-                    </div>
-                  } */}
-                </option>
-              );
-            })
-          : null}
-      </select>
+
+      <div className={styles.selectContainer}>
+        <Select
+          {...{ name, options, isMulti, isSearchable, isLoading }}
+          {...props}
+          loadingMessage={() => "Fetching countries"}
+          className={styles.reactSelectContainer}
+          classNamePrefix={styles.reactSelect}
+        />
+      </div>
     </fieldset>
   );
 };

@@ -1,7 +1,7 @@
 @import "../../sass/main.scss";
 
 .button {
-  height: 48px;
+  height: 4.2rem;
   width: 100%;
   background: $secondary;
   border: 1px solid $secondary;
@@ -32,5 +32,29 @@
 
   svg {
     margin-right: 6px;
+  }
+
+  &.outline {
+    color: $secondary;
+    background: $white;
+    border-color: $secondary;
+  }
+
+  &.loading {
+    pointer-events: none;
+
+    svg {
+      animation: rotate 0.6s linear infinite;
+      color: $white;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
   }
 }

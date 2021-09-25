@@ -12,7 +12,11 @@ import styles from "./styles.module.scss";
 import Mobile from "./steps/Mobile";
 import { useProvider } from "Context/Provider";
 
-const steps = [<Welcome />, <Country />, <Email />, <Amount />, <Mobile />, <Success />];
+function pay(payload) {
+  return window.FlutterwaveCheckout(payload);
+}
+
+const steps = [<Welcome />, <Country />, <Email />, <Amount />, <Mobile pay={pay} />, <Success />];
 
 const Home = () => {
   const { page } = useProvider();
@@ -20,7 +24,6 @@ const Home = () => {
   return (
     <div className={`${styles.container} ${page !== 0 ? styles.noBg : ""}`}>
       <NavBar />
-
       {steps[page]}
     </div>
   );
