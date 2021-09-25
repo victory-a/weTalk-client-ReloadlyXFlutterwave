@@ -111,7 +111,7 @@ const Mobile = ({ pay }) => {
 
           <Button type="submit" isLoading={isLoading}>
             <AiFillLock />
-            Pay $7.49
+            {`Pay ${state?.country?.currencySymbol} ${state.amount}`}
           </Button>
         </div>
       </form>
