@@ -14,7 +14,9 @@ const Welcome = () => {
       <p>You can still top-up your mobile wallet airtime even without your local currency.</p>
 
       <div className={styles.buttonContainer}>
-        <Button onClick={goGorward}>Get Started</Button>
+        <Button onClick={goGorward} autoFocus={true}>
+          Get Started
+        </Button>
       </div>
     </div>
   );

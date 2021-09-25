@@ -23,9 +23,6 @@ const flutterWavePayload = {
   customizations: {
     title: "Topup X",
     description: "Payment airtime purchase"
-  },
-  onclose: function() {
-    return;
   }
 };
 
@@ -67,6 +64,10 @@ const Mobile = ({ pay }) => {
     flutterWavePayload.customer.email = state.email;
     flutterWavePayload.customer.phone_number = operatorPayload.phoneNumber;
     flutterWavePayload.customer.name = "Topup X";
+    flutterWavePayload.onclose = function() {
+      setIsLoading(false);
+      return;
+    };
     flutterWavePayload.callback = function(data) {
       // verify payment and charge card
       if (data?.status === "successful") {
@@ -116,6 +117,7 @@ const Mobile = ({ pay }) => {
           defaultPrefix={state.callingCode}
           options={state.country.callingCodes}
           onChange={handleChange}
+          onPrefixChange={e => setFormValue("callingCode", e.target.value)}
           autoFocus={true}
           required
         />

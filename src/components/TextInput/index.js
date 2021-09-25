@@ -18,7 +18,7 @@ const TextInput = props => {
 
 export default TextInput;
 
-export const PhoneNumberInput = ({ defaultPrefix, ...props }) => {
+export const PhoneNumberInput = ({ defaultPrefix, onPrefixChange, ...props }) => {
   const { name, label = "", options = [], required = true } = props;
 
   return (
@@ -28,15 +28,11 @@ export const PhoneNumberInput = ({ defaultPrefix, ...props }) => {
       </label>
 
       <div className={styles.inputGroup}>
-        <select id={name}>
-          <option value="" disabled className={styles.placeholder}>
-            {props.defaultPrefix}
-          </option>
-
+        <select id={name} onChange={onPrefixChange}>
           {options.length > 0
             ? options.map((code, i) => {
                 return (
-                  <option value={code} key={`option-${i}`}>
+                  <option value={code} key={`option-${i} ${code}`}>
                     {code}
                   </option>
                 );
