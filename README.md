@@ -2,8 +2,6 @@
 
 Submission for ReloadlyXFlutterwave hackathon.
 
-Live URL: [https://fichaya-dashboard-git-main.victory-a.vercel.app/](https://fichaya-dashboard-git-main.victory-a.vercel.app/)
-
 ### Setup  
 1. Clone this repository
 2. Navigate to the root folder `cd /wetalk-client`
