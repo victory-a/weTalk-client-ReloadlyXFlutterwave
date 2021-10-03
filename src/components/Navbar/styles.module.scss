@@ -5,8 +5,17 @@ nav {
   margin: 0 auto;
   padding-top: 2.4rem;
 
-  color: $primary;
+  color: $secondary;
   @include flexspacebtw;
+
+  svg {
+    width: 70px;
+    height: auto;
+
+    @include sm {
+      width: 50px;
+    }
+  }
 
   ul {
     display: flex;
@@ -21,10 +30,10 @@ nav {
   }
 
   a {
-    color: $primary;
+    color: $secondary;
 
     &:hover {
-      color: $primary;
+      color: $secondary;
       text-decoration: underline;
     }
   }

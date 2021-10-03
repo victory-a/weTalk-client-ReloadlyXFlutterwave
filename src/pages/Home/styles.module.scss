@@ -6,24 +6,22 @@
   width: 100%;
   background: url("../../assets/map.png") no-repeat;
   background-size: cover;
-
-  &.noBg {
-    // background: $white;
-  }
 }
 
 .headerContainer {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   text-align: center;
   color: $primary;
   margin-top: 10%;
 
   h1 {
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.2;
     font-weight: bold;
     font-size: 5rem;
+    color: $secondary;
 
     @include sm {
       margin-bottom: 3rem;
@@ -32,6 +30,15 @@
 
   @include sm {
     text-align: left;
+  }
+
+  p {
+    text-align: center;
+
+    @include sm {
+      width: 80%;
+      text-align: left;
+    }
   }
 }
 

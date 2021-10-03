@@ -22,7 +22,7 @@ const Home = () => {
   const { page } = useProvider();
 
   return (
-    <div className={`${styles.container} ${page !== 0 ? styles.noBg : ""}`}>
+    <div className={styles.container}>
       <NavBar />
       {steps[page]}
     </div>

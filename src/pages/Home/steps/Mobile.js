@@ -27,7 +27,6 @@ const flutterWavePayload = {
 };
 
 const Mobile = ({ pay }) => {
-  // eslint-disable-next-line no-unused-vars
   const {
     goGorward,
     goBack,
@@ -88,7 +87,7 @@ const Mobile = ({ pay }) => {
 
           .catch(() => {
             setIsLoading(false);
-            cogoToast.error("Airtime purchased failed 😩, try again", { hideAfter: 20 });
+            cogoToast.error("Airtime purchased failed 😩, try again", { hideAfter: 7 });
           });
       }
     };
@@ -97,13 +96,13 @@ const Mobile = ({ pay }) => {
       .then(response => {
         if (response?.data?.operatorId) {
           topUpPayload.operatorId = response?.data?.operatorId;
+          pay(flutterWavePayload);
         }
-        pay(flutterWavePayload);
       })
       .catch(() => {
         setIsLoading(false);
 
-        cogoToast.error("Failed to verify mobile number, try again", { hideAfter: 20 });
+        cogoToast.error("Failed to verify mobile number, try again", { hideAfter: 7 });
       });
   }
 

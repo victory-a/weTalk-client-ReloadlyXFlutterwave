@@ -12,13 +12,13 @@ const NavBar = () => {
 
       <ul>
         <li>
-          <a href="!#">Family & Friends</a>
+          <a href="/'">Family & Friends</a>
         </li>
         <li>
-          <a href="!#">Language</a>
+          <a href="/">Language</a>
         </li>
         <li>
-          <a href="!#">Help</a>
+          <a href="/">Help</a>
         </li>
       </ul>
     </nav>
